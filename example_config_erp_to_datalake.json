@@ -1,0 +1,63 @@
+{
+  "project_name": "Customer_ERP_to_DataLake",
+  "description": "ETL pipeline from ERP system to Data Lake",
+  "source": {
+    "type": "SAP_ERP",
+    "name": "SAP ERP Production",
+    "connection_details": {
+      "host": "sap-prod.company.com",
+      "port": 3306,
+      "database": "SAP_PROD"
+    }
+  },
+  "target": {
+    "type": "Hadoop",
+    "name": "Hadoop Data Lake",
+    "connection_details": {
+      "host": "hdfs-cluster.company.com",
+      "port": 8020,
+      "path": "/datalake/erp/customers"
+    }
+  },
+  "primary_key": "customer_id",
+  "schema": {
+    "customer_id": "integer",
+    "customer_name": "string",
+    "email": "string",
+    "phone": "string",
+    "address": "string",
+    "created_date": "date",
+    "last_modified": "timestamp",
+    "annual_revenue": "decimal",
+    "status": "string"
+  },
+  "validation_rules": {
+    "customer_id": {"required": true, "type": "integer", "min": 1},
+    "customer_name": {"required": true, "type": "string", "min_length": 2, "max_length": 255},
+    "email": {"required": true, "type": "string", "format": "email"},
+    "phone": {"required": false, "type": "string"},
+    "address": {"required": false, "type": "string"},
+    "created_date": {"required": true, "type": "date"},
+    "last_modified": {"required": true, "type": "timestamp"},
+    "annual_revenue": {"required": false, "type": "decimal", "min": 0},
+    "status": {"required": true, "type": "string", "allowed_values": ["ACTIVE", "INACTIVE", "SUSPENDED"]}
+  },
+  "etl_stages": [
+    {
+      "stage": "extraction",
+      "enabled": true,
+      "tests": ["row_count", "field_completeness", "data_types", "null_validation", "duplicates"]
+    },
+    {
+      "stage": "transformation",
+      "enabled": true,
+      "tests": ["data_quality", "business_rules", "lookups", "referential_integrity", "boundary_values"]
+    },
+    {
+      "stage": "loading",
+      "enabled": true,
+      "tests": ["target_row_count", "data_accuracy", "constraint_violations", "primary_key_uniqueness"]
+    }
+  ]
+}
+

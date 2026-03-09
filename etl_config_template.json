@@ -1,0 +1,54 @@
+{
+  "project_name": "Universal_ETL_Project",
+  "description": "Template configuration for any ETL project",
+  "source": {
+    "type": "csv",
+    "name": "Source System",
+    "connection_details": {
+      "path": "/data/source",
+      "format": "csv"
+    }
+  },
+  "target": {
+    "type": "database",
+    "name": "Target Data Warehouse",
+    "connection_details": {
+      "host": "localhost",
+      "database": "warehouse",
+      "port": 5432
+    }
+  },
+  "primary_key": "id",
+  "schema": {
+    "id": "integer",
+    "name": "string",
+    "email": "string",
+    "created_date": "date",
+    "amount": "decimal"
+  },
+  "validation_rules": {
+    "id": {"required": true, "type": "integer", "min": 1},
+    "name": {"required": true, "type": "string", "min_length": 1, "max_length": 255},
+    "email": {"required": true, "type": "string", "format": "email"},
+    "created_date": {"required": true, "type": "date"},
+    "amount": {"required": false, "type": "decimal", "min": 0}
+  },
+  "etl_stages": [
+    {
+      "stage": "extraction",
+      "enabled": true,
+      "tests": ["row_count", "field_completeness", "data_types"]
+    },
+    {
+      "stage": "transformation",
+      "enabled": true,
+      "tests": ["data_quality", "business_rules", "lookups"]
+    },
+    {
+      "stage": "loading",
+      "enabled": true,
+      "tests": ["target_row_count", "referential_integrity", "constraint_violations"]
+    }
+  ]
+}
+

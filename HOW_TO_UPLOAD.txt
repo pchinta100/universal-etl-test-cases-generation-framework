@@ -1,0 +1,171 @@
+═══════════════════════════════════════════════════════════════════════════
+           🚀 UPLOAD TO GITHUB - VISUAL STEP-BY-STEP GUIDE 🚀
+═══════════════════════════════════════════════════════════════════════════
+
+✅ FOLDER OPENED: Desktop\ETL_Framework_GitHub_Upload (17 files ready)
+✅ BROWSER OPENED: https://github.com/new
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 1: CREATE REPOSITORY ON GITHUB
+═══════════════════════════════════════════════════════════════════════════
+
+In the browser window:
+
+┌─────────────────────────────────────────────────────────────────┐
+│ Create a new repository                                         │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│ Repository name *                                               │
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │ universal-etl-testing-framework                             │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│ Description (optional)                                          │
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │ Universal ETL Testing Framework for all ETL projects        │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│ ○ Public   ○ Private                                            │
+│                                                                 │
+│ Initialize this repository with:                               │
+│ ☐ Add a README file          ← ❌ LEAVE THIS UNCHECKED!        │
+│ ☐ Add .gitignore                                               │
+│ ☐ Choose a license                                             │
+│                                                                 │
+│        [ Create repository ]  ← ✅ CLICK THIS                   │
+└─────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 2: UPLOAD FILES
+═══════════════════════════════════════════════════════════════════════════
+
+After clicking "Create repository", you'll see:
+
+┌─────────────────────────────────────────────────────────────────┐
+│ Quick setup — if you've done this kind of thing before          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│ ...or create a new repository on the command line              │
+│                                                                 │
+│ ...or push an existing repository from the command line        │
+│                                                                 │
+│ ...or import code from another repository                      │
+│                                                                 │
+│ You can also upload files from your computer or               │
+│ → uploading an existing file ← ✅ CLICK THIS LINK              │
+└─────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 3: DRAG AND DROP FILES
+═══════════════════════════════════════════════════════════════════════════
+
+After clicking "uploading an existing file":
+
+┌─────────────────────────────────────────────────────────────────┐
+│ Drag files here to add them to your repository                 │
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │                                                             │ │
+│ │              Drag additional files here                     │ │
+│ │                  to add them to your                        │ │
+│ │                     repository                              │ │
+│ │                                                             │ │
+│ │              or choose your files                           │ │
+│ │                                                             │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────┘
+
+NOW:
+1. Go to Desktop → ETL_Framework_GitHub_Upload folder
+2. Press Ctrl+A to select ALL 17 files
+3. Drag them into the gray area above
+
+OR:
+
+Click "choose your files" → Browse to Desktop\ETL_Framework_GitHub_Upload
+→ Select all files → Open
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 4: COMMIT CHANGES
+═══════════════════════════════════════════════════════════════════════════
+
+After dragging files, you'll see:
+
+┌─────────────────────────────────────────────────────────────────┐
+│ ✓ 17 files ready to commit                                      │
+│                                                                 │
+│ Commit message                                                  │
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │ Initial commit: Universal ETL Testing Framework             │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│ Extended description (optional)                                 │
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │                                                             │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│ ○ Commit directly to the main branch                           │
+│                                                                 │
+│        [ Commit changes ]  ← ✅ CLICK THIS                      │
+└─────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+✅ DONE! YOUR REPOSITORY IS NOW LIVE!
+═══════════════════════════════════════════════════════════════════════════
+
+Visit: https://github.com/pchinta100/universal-etl-testing-framework
+
+You'll see all your files, and the README.md will be displayed on the main page!
+
+═══════════════════════════════════════════════════════════════════════════
+BONUS: ADD TOPICS (RECOMMENDED)
+═══════════════════════════════════════════════════════════════════════════
+
+On your repository page:
+
+1. Look for the "About" section (right side)
+2. Click the ⚙ icon (settings)
+3. In "Topics" field, add:
+   - etl
+   - testing
+   - python
+   - data-quality
+   - test-automation
+   - data-engineering
+4. Click "Save changes"
+
+This makes your repo easier to discover!
+
+═══════════════════════════════════════════════════════════════════════════
+FILES READY TO UPLOAD (17 FILES)
+═══════════════════════════════════════════════════════════════════════════
+
+✓ .gitignore
+✓ config_csv_redshift.json
+✓ config_oracle_snowflake.json
+✓ config_postgresql_bigquery.json
+✓ etl_config_template.json
+✓ example_config_erp_to_datalake.json
+✓ example_config_orders_snowflake.json
+✓ FRAMEWORK_GUIDE.md
+✓ generate_all_test_cases.py
+✓ generate_test_cases.py
+✓ GITHUB_QUICK_REF.txt
+✓ PUSH_TO_GITHUB_GUIDE.md
+✓ QUICK_REFERENCE.txt
+✓ README.md
+✓ requirements.txt
+✓ universal_etl_framework.py
+✓ UPLOAD_INSTRUCTIONS.txt
+
+═══════════════════════════════════════════════════════════════════════════
+
+⏱️  TOTAL TIME: 2-3 minutes
+📍 FOLDER: Desktop\ETL_Framework_GitHub_Upload (ALREADY OPENED)
+🌐 GITHUB: https://github.com/new (ALREADY OPENED)
+
+═══════════════════════════════════════════════════════════════════════════
+
+           👆 JUST DRAG THE FILES AND YOU'RE DONE! 👆
+
+═══════════════════════════════════════════════════════════════════════════
+

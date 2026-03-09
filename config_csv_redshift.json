@@ -1,0 +1,50 @@
+{
+  "project_name": "CSV_to_Redshift_Pipeline",
+  "description": "ETL pipeline from CSV files to Amazon Redshift",
+  "source": {
+    "type": "CSV",
+    "name": "CSV File Storage"
+  },
+  "target": {
+    "type": "Redshift",
+    "name": "Amazon Redshift Data Warehouse"
+  },
+  "primary_key": "product_id",
+  "schema": {
+    "product_id": "integer",
+    "product_name": "string",
+    "category": "string",
+    "price": "decimal",
+    "quantity": "integer",
+    "supplier": "string",
+    "sku": "string",
+    "description": "string",
+    "last_restocked": "date"
+  },
+  "validation_rules": {
+    "product_id": {"required": true, "type": "integer", "min": 1},
+    "product_name": {"required": true, "type": "string", "min_length": 1},
+    "category": {"required": true, "type": "string"},
+    "price": {"required": true, "type": "decimal", "min": 0},
+    "quantity": {"required": true, "type": "integer", "min": 0},
+    "supplier": {"required": true, "type": "string"},
+    "sku": {"required": true, "type": "string"},
+    "description": {"required": false, "type": "string"},
+    "last_restocked": {"required": true, "type": "date"}
+  },
+  "etl_stages": [
+    {"stage": "extraction", "enabled": true},
+    {"stage": "transformation", "enabled": true},
+    {"stage": "loading", "enabled": true}
+  ],
+  "agent_limits": {
+    "max_extraction_tests": 100,
+    "max_transformation_tests": 50,
+    "max_loading_tests": 100,
+    "max_total_tests": 250,
+    "concurrent_agents": 4,
+    "rate_limit_per_second": 10,
+    "enable_test_caching": true,
+    "cache_ttl_minutes": 60
+  }
+}

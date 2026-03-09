@@ -1,0 +1,64 @@
+{
+  "project_name": "Orders_Database_to_Snowflake",
+  "description": "ETL pipeline from MySQL database to Snowflake Data Warehouse",
+  "source": {
+    "type": "MySQL",
+    "name": "Orders Production Database",
+    "connection_details": {
+      "host": "mysql-prod.company.com",
+      "port": 3306,
+      "database": "orders_db"
+    }
+  },
+  "target": {
+    "type": "Snowflake",
+    "name": "Snowflake Data Warehouse",
+    "connection_details": {
+      "account": "xy12345.us-east-1",
+      "warehouse": "COMPUTE_WH",
+      "database": "WAREHOUSE_DB",
+      "schema": "ORDERS"
+    }
+  },
+  "primary_key": "order_id",
+  "schema": {
+    "order_id": "integer",
+    "customer_id": "integer",
+    "order_date": "date",
+    "order_amount": "decimal",
+    "status": "string",
+    "payment_method": "string",
+    "shipping_address": "string",
+    "created_at": "timestamp",
+    "updated_at": "timestamp"
+  },
+  "validation_rules": {
+    "order_id": {"required": true, "type": "integer", "min": 1},
+    "customer_id": {"required": true, "type": "integer", "min": 1},
+    "order_date": {"required": true, "type": "date"},
+    "order_amount": {"required": true, "type": "decimal", "min": 0, "max": 999999.99},
+    "status": {"required": true, "type": "string", "allowed_values": ["PENDING", "PROCESSING", "SHIPPED", "DELIVERED", "CANCELLED"]},
+    "payment_method": {"required": true, "type": "string", "allowed_values": ["CREDIT_CARD", "DEBIT_CARD", "PAYPAL", "BANK_TRANSFER"]},
+    "shipping_address": {"required": true, "type": "string", "min_length": 5},
+    "created_at": {"required": true, "type": "timestamp"},
+    "updated_at": {"required": true, "type": "timestamp"}
+  },
+  "etl_stages": [
+    {
+      "stage": "extraction",
+      "enabled": true,
+      "tests": ["row_count", "field_completeness", "data_types", "null_validation", "duplicates"]
+    },
+    {
+      "stage": "transformation",
+      "enabled": true,
+      "tests": ["data_quality", "business_rules", "lookups", "referential_integrity", "boundary_values"]
+    },
+    {
+      "stage": "loading",
+      "enabled": true,
+      "tests": ["target_row_count", "data_accuracy", "constraint_violations", "primary_key_uniqueness"]
+    }
+  ]
+}
+

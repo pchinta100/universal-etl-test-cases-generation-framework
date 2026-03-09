@@ -1,0 +1,43 @@
+{
+  "project_name": "PostgreSQL_to_BigQuery_Pipeline",
+  "description": "ETL pipeline from PostgreSQL to Google BigQuery",
+  "source": {
+    "type": "PostgreSQL",
+    "name": "PostgreSQL Production Database"
+  },
+  "target": {
+    "type": "BigQuery",
+    "name": "Google BigQuery Data Lake"
+  },
+  "primary_key": "order_id",
+  "schema": {
+    "order_id": "integer",
+    "customer_id": "integer",
+    "order_date": "date",
+    "order_amount": "decimal",
+    "status": "string",
+    "payment_method": "string",
+    "shipping_address": "string",
+    "tracking_number": "string",
+    "created_at": "timestamp",
+    "updated_at": "timestamp"
+  },
+  "validation_rules": {
+    "order_id": {"required": true, "type": "integer", "min": 1},
+    "customer_id": {"required": true, "type": "integer", "min": 1},
+    "order_date": {"required": true, "type": "date"},
+    "order_amount": {"required": true, "type": "decimal", "min": 0},
+    "status": {"required": true, "allowed_values": ["PENDING", "PROCESSING", "SHIPPED", "DELIVERED", "CANCELLED"]},
+    "payment_method": {"required": true, "allowed_values": ["CREDIT_CARD", "DEBIT_CARD", "PAYPAL", "BANK_TRANSFER"]},
+    "shipping_address": {"required": true, "type": "string"},
+    "tracking_number": {"required": false, "type": "string"},
+    "created_at": {"required": true, "type": "timestamp"},
+    "updated_at": {"required": true, "type": "timestamp"}
+  },
+  "etl_stages": [
+    {"stage": "extraction", "enabled": true},
+    {"stage": "transformation", "enabled": true},
+    {"stage": "loading", "enabled": true}
+  ]
+}
+

@@ -1,0 +1,114 @@
+════════════════════════════════════════════════════════════════
+           PUSH TO GITHUB - QUICK REFERENCE CARD
+════════════════════════════════════════════════════════════════
+
+📍 YOUR GITHUB: https://github.com/pchinta100?tab=repositories
+
+════════════════════════════════════════════════════════════════
+                    🎯 EASIEST METHOD
+════════════════════════════════════════════════════════════════
+
+USE GITHUB DESKTOP (No command line needed!)
+
+1. Download: https://desktop.github.com/
+2. Install & sign in to GitHub
+3. File → Add Local Repository
+4. Select folder: C:\Users\pchin\IdeaProjects\Generate ETL Test cases
+5. Click "Publish repository"
+6. Name: universal-etl-testing-framework
+7. Click "Publish"
+8. DONE! ✅
+
+════════════════════════════════════════════════════════════════
+                    🎯 ALTERNATIVE METHOD
+════════════════════════════════════════════════════════════════
+
+USE AUTOMATED SCRIPT
+
+1. Install Git: https://git-scm.com/download/win
+2. Restart PowerShell
+3. Create repo on GitHub: https://github.com/new
+   - Name: universal-etl-testing-framework
+   - Don't initialize with README
+4. Double-click: setup_github.bat
+5. Follow prompts
+6. DONE! ✅
+
+════════════════════════════════════════════════════════════════
+                    🔐 AUTHENTICATION
+════════════════════════════════════════════════════════════════
+
+You'll need a Personal Access Token:
+
+1. Go to: https://github.com/settings/tokens
+2. Generate new token (classic)
+3. Name: ETL Framework
+4. Select: ☑ repo (all boxes)
+5. Generate & COPY the token
+6. Use token as password when pushing
+
+════════════════════════════════════════════════════════════════
+                    📋 REPOSITORY SETTINGS
+════════════════════════════════════════════════════════════════
+
+Name: universal-etl-testing-framework
+
+Description: Universal ETL Testing Framework - Generate test
+cases for any ETL project. Supports all sources/targets.
+
+Topics: etl, testing, python, data-quality, test-automation
+
+════════════════════════════════════════════════════════════════
+                    📂 FILES CREATED FOR YOU
+════════════════════════════════════════════════════════════════
+
+✅ .gitignore                   - Git ignore rules
+✅ setup_github.bat             - Easy push script
+✅ push_to_github.ps1           - PowerShell automation
+✅ PUSH_TO_GITHUB_GUIDE.md      - Complete guide
+✅ GITHUB_SETUP_GUIDE.md        - Setup instructions
+✅ README.md                    - Project documentation
+
+════════════════════════════════════════════════════════════════
+                    ⚡ MANUAL COMMANDS
+════════════════════════════════════════════════════════════════
+
+cd "C:\Users\pchin\IdeaProjects\Generate ETL Test cases"
+git init
+git add .
+git commit -m "Initial commit: Universal ETL Testing Framework"
+git remote add origin https://github.com/pchinta100/REPO-NAME.git
+git branch -M main
+git push -u origin main
+
+════════════════════════════════════════════════════════════════
+                    🆘 TROUBLESHOOTING
+════════════════════════════════════════════════════════════════
+
+Problem: Git not found
+Fix: Install Git or use GitHub Desktop
+
+Problem: Authentication failed
+Fix: Use Personal Access Token, not password
+
+Problem: Permission denied
+Fix: Check GitHub token has 'repo' scope
+
+════════════════════════════════════════════════════════════════
+                    ✅ AFTER PUSHING
+════════════════════════════════════════════════════════════════
+
+1. Visit: https://github.com/pchinta100/universal-etl-testing-framework
+2. Add description and topics
+3. Verify README displays correctly
+4. Optional: Add LICENSE file
+5. Share your repository!
+
+════════════════════════════════════════════════════════════════
+
+💡 TIP: Use GitHub Desktop for the easiest experience!
+
+📖 FULL GUIDE: See PUSH_TO_GITHUB_GUIDE.md
+
+════════════════════════════════════════════════════════════════
+
