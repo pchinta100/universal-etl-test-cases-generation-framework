@@ -421,6 +421,10 @@ python generate_all_test_cases.py --include-template
 # Write outputs to a separate folder
 python generate_all_test_cases.py --output-dir generated_csv
 
+<img width="1361" height="786" alt="image" src="https://github.com/user-attachments/assets/b25a5bea-efe2-4de9-b99b-7df2b51e280f" />
+
+
 # Run specific configs only
 python generate_all_test_cases.py config_postgresql_bigquery.json config_csv_redshift.json
 ```
+
