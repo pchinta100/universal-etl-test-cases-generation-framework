@@ -427,4 +427,7 @@ python generate_all_test_cases.py --output-dir generated_csv
 # Run specific configs only
 python generate_all_test_cases.py config_postgresql_bigquery.json config_csv_redshift.json
 ```
+<img width="1361" height="786" alt="image" src="https://github.com/user-attachments/assets/045a17ff-1102-4863-b8f6-875bad1c5bda" />
+
+
 
